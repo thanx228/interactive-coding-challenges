@@ -32,11 +32,9 @@ class Trie(object):
         node = self.root
         parent = None
         for char in word:
-            if char in node.children:
-                node = node.children[char]
-            else:
+            if char not in node.children:
                 node.children[char] = Node(char, parent=node)
-                node = node.children[char]
+            node = node.children[char]
         node.terminates = True
 
     def remove(self, word):

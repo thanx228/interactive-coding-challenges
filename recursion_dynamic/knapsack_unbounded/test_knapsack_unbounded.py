@@ -7,8 +7,7 @@ class TestKnapsack(unittest.TestCase):
         knapsack = Knapsack()
         self.assertRaises(TypeError, knapsack.fill_knapsack, None, None)
         self.assertEqual(knapsack.fill_knapsack(0, 0), 0)
-        items = []
-        items.append(Item(label='a', value=1, weight=1))
+        items = [Item(label='a', value=1, weight=1)]
         items.append(Item(label='b', value=3, weight=2))
         items.append(Item(label='c', value=7, weight=4))
         total_weight = 8

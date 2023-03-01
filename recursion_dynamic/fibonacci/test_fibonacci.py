@@ -4,10 +4,8 @@ import unittest
 class TestFib(unittest.TestCase):
 
     def test_fib(self, func):
-        result = []
         expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
-        for i in range(len(expected)):
-            result.append(func(i))
+        result = [func(i) for i in range(len(expected))]
         self.assertEqual(result, expected)
         print('Success: test_fib')
 

@@ -26,7 +26,7 @@ class TestHanoi(unittest.TestCase):
         for disk_index in range(num_disks, -1, -1):
             src.push(disk_index)
         hanoi.move_disks(num_disks, src, dest, buff)
-        for disk_index in range(0, num_disks):
+        for disk_index in range(num_disks):
             self.assertEqual(dest.pop(), disk_index)
 
         print('Success: test_hanoi')

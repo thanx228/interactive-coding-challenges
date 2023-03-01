@@ -2,10 +2,9 @@ import unittest
 
 
 def height(node):
-    if node is None:
-        return 0
-    return 1 + max(height(node.left),
-                   height(node.right))
+    return (
+        0 if node is None else 1 + max(height(node.left), height(node.right))
+    )
 
 
 class TestBstMin(unittest.TestCase):

@@ -8,9 +8,8 @@ class TestBstSuccessor(unittest.TestCase):
         bst_successor.get_next(None)
 
     def test_bst_successor(self):
-        nodes = {}
         node = Node(5)
-        nodes[5] = node
+        nodes = {5: node}
         bst = Bst(nodes[5])
         nodes[3] = bst.insert(3)
         nodes[8] = bst.insert(8)

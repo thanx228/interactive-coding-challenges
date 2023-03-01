@@ -7,8 +7,7 @@ class TestSortStack(unittest.TestCase):
     def get_sorted_stack(self, stack, numbers):
         for x in numbers:
             stack.push(x)
-        sorted_stack = stack.sort()
-        return sorted_stack
+        return stack.sort()
 
     def test_sort_stack(self, stack):
         print('Test: Empty stack')
@@ -21,11 +20,9 @@ class TestSortStack(unittest.TestCase):
 
         print('Test: Two or more element stack (general case)')
         num_items = 10
-        numbers = [randint(0, 10) for x in range(num_items)]
+        numbers = [randint(0, 10) for _ in range(num_items)]
         sorted_stack = self.get_sorted_stack(stack, numbers)
-        sorted_numbers = []
-        for _ in range(num_items):
-            sorted_numbers.append(sorted_stack.pop())
+        sorted_numbers = [sorted_stack.pop() for _ in range(num_items)]
         self.assertEqual(sorted_numbers, sorted(numbers, reverse=True))
 
         print('Success: test_sort_stack')

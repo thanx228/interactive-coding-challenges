@@ -9,7 +9,7 @@ class BinaryTree (object):
 	def __init__ (self):
 		self.root = None
 
-	def insert (self, newData):
+	def insert(self, newData):
 		leaf = Node(newData)
 
 		if self.root is None:
@@ -19,18 +19,14 @@ class BinaryTree (object):
 			parent = self.root
 			while current is not None:
 				parent = current
-				if newData < current.data:
-					current = current.leftChild
-				else:
-					current = current.rightChild
-
+				current = current.leftChild if newData < current.data else current.rightChild
 			if newData < parent.data:
 				parent.leftChild = leaf
 			else:
 				parent.rightChild = leaf
 
 	# returns false if the item to be deleted is not on the tree
-	def delete (self, data):
+	def delete(self, data):
 		current = self.root
 		parent = self.root
 		isLeft = False
@@ -65,14 +61,6 @@ class BinaryTree (object):
 				parent.leftChild = current.leftChild
 			else:
 				parent.rightChild = current.leftChild
-
-		elif current.rightChild is None:
-			if current is self.root:
-				self.root = current.rightChild
-			elif isLeft:
-				parent.lChild = current.rightChild
-			else:
-				parent.rightChild = current.rightChild
 
 		else:
 			successor = current.rightChild

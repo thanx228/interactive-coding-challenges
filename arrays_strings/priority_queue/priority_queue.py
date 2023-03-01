@@ -8,7 +8,7 @@ class PriorityQueueNode(object):
         self.key = key
 
     def __repr__(self):
-        return str(self.obj) + ': ' + str(self.key)
+        return f'{str(self.obj)}: {str(self.key)}'
 
 
 class PriorityQueue(object):

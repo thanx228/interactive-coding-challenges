@@ -16,10 +16,10 @@ class Queue(object):
         # Empty list
         if self.head is None and self.tail is None:
             self.head = node
-            self.tail = node
         else:
             self.tail.next = node
-            self.tail = node
+
+        self.tail = node
 
     def dequeue(self):
         # Empty list

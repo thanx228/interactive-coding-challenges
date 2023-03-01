@@ -7,8 +7,7 @@ class TestKnapsack(unittest.TestCase):
         knapsack = Knapsack()
         self.assertRaises(TypeError, knapsack.fill_knapsack, None, None)
         self.assertEqual(knapsack.fill_knapsack(0, 0), 0)
-        items = []
-        items.append(Item(label='a', value=2, weight=2))
+        items = [Item(label='a', value=2, weight=2)]
         items.append(Item(label='b', value=4, weight=2))
         items.append(Item(label='c', value=6, weight=4))
         items.append(Item(label='d', value=9, weight=5))
@@ -17,9 +16,7 @@ class TestKnapsack(unittest.TestCase):
         results = knapsack.fill_knapsack(items, total_weight)
         self.assertEqual(results[0].label, 'd')
         self.assertEqual(results[1].label, 'b')
-        total_value = 0
-        for item in results:
-            total_value += item.value
+        total_value = sum(item.value for item in results)
         self.assertEqual(total_value, expected_value)
         print('Success: test_knapsack_bottom_up')
 
@@ -27,8 +24,7 @@ class TestKnapsack(unittest.TestCase):
         knapsack = KnapsackTopDown()
         self.assertRaises(TypeError, knapsack.fill_knapsack, None, None)
         self.assertEqual(knapsack.fill_knapsack(0, 0), 0)
-        items = []
-        items.append(Item(label='a', value=2, weight=2))
+        items = [Item(label='a', value=2, weight=2)]
         items.append(Item(label='b', value=4, weight=2))
         items.append(Item(label='c', value=6, weight=4))
         items.append(Item(label='d', value=9, weight=5))

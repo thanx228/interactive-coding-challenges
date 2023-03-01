@@ -5,7 +5,7 @@ class TestGraph(unittest.TestCase):
 
     def create_graph(self):
         graph = Graph()
-        for key in range(0, 6):
+        for key in range(6):
             graph.add_node(key)
         return graph
 
