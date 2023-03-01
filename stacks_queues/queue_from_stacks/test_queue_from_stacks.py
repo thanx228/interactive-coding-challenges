@@ -12,7 +12,7 @@ class TestQueueFromStacks(unittest.TestCase):
         print('Test: Enqueue on non-empty stack')
         print('Test: Multiple enqueue in a row')
         num_items = 3
-        for i in range(0, num_items):
+        for i in range(num_items):
             queue.enqueue(i)
 
         print('Test: Dequeue on non-empty stack')

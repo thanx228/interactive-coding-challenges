@@ -4,10 +4,8 @@ import unittest
 class TestShortestPath(unittest.TestCase):
 
     def test_shortest_path(self):
-        nodes = []
         graph = GraphShortestPath()
-        for id in range(0, 6):
-            nodes.append(graph.add_node(id))
+        nodes = [graph.add_node(id) for id in range(6)]
         graph.add_edge(0, 1)
         graph.add_edge(0, 4)
         graph.add_edge(0, 5)
